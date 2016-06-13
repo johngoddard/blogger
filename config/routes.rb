@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   root to: 'articles#index'
+
   resources :articles do
     resources :comments
   end
@@ -11,4 +12,5 @@ Rails.application.routes.draw do
 
   get 'login'  => 'author_sessions#new'
   get 'logout' => 'author_sessions#destroy'
+  get 'top' => 'articles#top'
 end

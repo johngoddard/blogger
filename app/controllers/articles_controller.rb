@@ -11,6 +11,8 @@ class ArticlesController < ApplicationController
     @article = Article.find(params[:id])
     @comment = Comment.new
     @comment.article_id = @article_id
+
+    @article.increment_views
   end
 
   def new
@@ -46,6 +48,10 @@ class ArticlesController < ApplicationController
     flash.notice = "Article '#{@article.title}' updated!"
 
     redirect_to article_path(@article)
+  end
+
+  def top
+    @articles = Article.all.to_a.sort_by!{|a| a.view_count}.reverse[0..2]
   end
 
 

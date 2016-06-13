@@ -13,3 +13,13 @@
  *= require_tree .
  *= require_self
  */
+
+ .nav-footer{
+   text-align: center;
+   margin-top: 1em;
+ }
+
+ .nav-footer a {
+   margin-left: 5px;
+   margin-right: 5px;
+ }

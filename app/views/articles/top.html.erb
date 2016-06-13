@@ -1,0 +1,13 @@
+<h1>Top 3 Articles</h1>
+
+<ul id="articles">
+  <% @articles.each_with_index do |article, index| %>
+    <li>
+      <%= link_to article.title, article_path(article) %>
+    </li>
+  <% end %>
+</ul>
+
+<% if logged_in? %>
+  <%= link_to "Create new article", new_article_path, class: "new_article" %>
+<% end %>
